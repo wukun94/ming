@@ -252,7 +252,7 @@
                     <finalName>ming</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
-                        <descriptor>src/main/resources/build/package.xml</descriptor>
+                        <descriptor>src/main/resources/package.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
