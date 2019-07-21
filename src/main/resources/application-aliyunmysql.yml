@@ -18,9 +18,10 @@ spring:
   jpa:
     showSql: true
   redis:
-    host: 47.96.15.218
+    ##redis位置放在了啊腾讯云
+    host: 49.234.6.120
     port: 6379
-    password: nzjrkj
+    password: cp520822
     timeout: 10000
     jedis:
       pool:
