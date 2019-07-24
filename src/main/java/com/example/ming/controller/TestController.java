@@ -89,4 +89,10 @@ public class TestController {
         System.out.println(lsit.toString());
         return ResponseResult.e(ResponseCode.OK, lsit);
     }
+
+    @PostMapping(value = {"/finddata1"})
+    @ApiOperation(value = "继承page的数据读取")
+    public ResponseResult<List> finddata1() {
+        return ResponseResult.e(ResponseCode.OK, areaService.findData1());
+    }
 }
