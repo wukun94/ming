@@ -4,11 +4,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.ming.common.bean.ResponseCode;
 import com.example.ming.common.bean.ResponseResult;
 import com.example.ming.dto.applyNoDto;
+import com.example.ming.service.AreaService;
 import com.example.ming.utils.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,6 +28,10 @@ import java.util.Map;
 @Api(tags = {"调用风控"})
 @Slf4j
 public class TestController {
+
+    @Autowired
+    AreaService areaService;
+
     @PostMapping(value = {"/data"})
     @ApiOperation(value = "显示数据")
     public ResponseResult<String> getPageGroup(@RequestBody applyNoDto applyNoDto) {
@@ -73,5 +80,13 @@ public class TestController {
         PdfToPngGoodU.pdftopng(name);
         System.out.println("*******************数据显示结束*******************");
         return ResponseResult.e(ResponseCode.OK, "");
+    }
+
+    @PostMapping(value = {"/finddata"})
+    @ApiOperation(value = "读数据")
+    public ResponseResult<List> finddata() {
+        List lsit=areaService.findData();
+        System.out.println(lsit.toString());
+        return ResponseResult.e(ResponseCode.OK, lsit);
     }
 }
