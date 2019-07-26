@@ -19,7 +19,7 @@ public interface FindAllMapper {
      *自定义查询方法
      * @return list
      */
-    @Select("select * from area limit 10")
+    @Select("select * from area")
     List<Area> findall();
 
 

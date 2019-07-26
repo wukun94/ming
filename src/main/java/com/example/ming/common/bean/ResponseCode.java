@@ -14,6 +14,8 @@ import java.util.List;
 public enum ResponseCode {
 
     OK(1,"操作成功"),
+    CODE(1001,"验证码成功"),
+    CODEFAIL(1002,"验证码校验失败"),
     SIGN_IN_OK(2,"登录成功"),
     LOGOUT_OK(3,"注销登录成功"),
     SIGN_IN_INPUT_FAIL(-4,"账号或密码错误"),
@@ -65,15 +67,15 @@ public enum ResponseCode {
     ERROR_GROUP_ID_IS_NULL(106000006, "入参groupId规则id不能为空，请检查入参"),
     ERROR_EXPRESSION_IS_NULL(106000006, "规则表达式不能为空，请检查入参"),
     ERROR_HIT_MESSAGE_IS_NULL(106000006, "命中信息不能为空，请检查入参"),
-    
-    
+
+
     ERROR_EXEC_RULE(102000001, "规则执行失败"),
     ERROR_RULE_GROUP_CODE_DUPLICATE(102000002, "规则组编码重复"),
     ERROR_RULE_CODE_DUPLICATE(102000003, "规则编码重复"),
-    
-    
+
+
     ERROR_FLOW_BRANCH(103000001, "流程分支执行失败"),
-    
+
     ERROR_NAME_BLANK(104000001, "申请用户姓名为空"),
     ERROR_MOBIL_BLANK(104000002, "申请用户手机号为空"),
     ERROR_IDCARD_BLANK(104000003, "申请用户身份证为空"),

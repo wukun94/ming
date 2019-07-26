@@ -1,5 +1,7 @@
 package com.example.ming.controller;
 
+import cn.hutool.captcha.CaptchaUtil;
+import cn.hutool.captcha.ShearCaptcha;
 import com.alibaba.fastjson.JSONObject;
 import com.example.ming.common.bean.ResponseCode;
 import com.example.ming.common.bean.ResponseResult;
@@ -11,10 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -84,7 +83,16 @@ public class TestController {
 
     @PostMapping(value = {"/finddata"})
     @ApiOperation(value = "读数据")
-    public ResponseResult<List> finddata() {
+    public ResponseResult<List> finddata() throws Exception {
+        List lsit=areaService.findData();
+        ListToExcelUtil.stuList2Excel(lsit);
+        System.out.println(lsit.toString());
+        return ResponseResult.e(ResponseCode.OK, lsit);
+    }
+
+    @PostMapping(value = {"/login"})
+    @ApiOperation(value = "登陆")
+    public ResponseResult<List> login() {
         List lsit=areaService.findData();
         System.out.println(lsit.toString());
         return ResponseResult.e(ResponseCode.OK, lsit);
@@ -95,4 +103,22 @@ public class TestController {
     public ResponseResult<List> finddata1() {
         return ResponseResult.e(ResponseCode.OK, areaService.findData1());
     }
+
+    @PostMapping(value = {"/getCode"})
+    @ApiOperation(value = "生成验证码")
+    public ResponseResult<List> getCode(@RequestParam String code) {
+         //定义图形验证码的长、宽、验证码字符数、干扰线宽度
+        ShearCaptcha captcha = CaptchaUtil.createShearCaptcha(200, 100, 4, 4);
+        //图形验证码写出，可以写出到文件，也可以写出到流
+        captcha.write("d:/shear.png");
+        //验证图形验证码的有效性，返回boolean值
+        boolean a=captcha.verify(code);
+        if (a){
+            return ResponseResult.e(ResponseCode.CODE);
+        }else{
+        return ResponseResult.e(ResponseCode.CODEFAIL);
+        }
+    }
+
+
 }
