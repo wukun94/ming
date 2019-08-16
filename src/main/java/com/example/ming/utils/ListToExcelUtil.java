@@ -30,7 +30,7 @@ public class ListToExcelUtil {
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMdd hhmmss");
         Workbook wb = new XSSFWorkbook();
         //标题行抽出字段
-        String[] title = {"areaId","areaCode", "areaName", "level", "cityCode", "center", "parentId"};
+        String[] title = {"Id","Pid", "District", "Level"};
         //设置sheet名称，并创建新的sheet对象
         String sheetName = "地区信息一览表";
         Sheet stuSheet = wb.createSheet(sheetName);
@@ -52,13 +52,10 @@ public class ListToExcelUtil {
             row = stuSheet.createRow(i + 1);
             //把值一一写进单元格里
             //设置第一列为自动递增的序号
-            row.createCell(0).setCellValue(stuList.get(i).getAreaid());
-            row.createCell(1).setCellValue(stuList.get(i).getAreacode());
-            row.createCell(2).setCellValue(stuList.get(i).getAreaname());
+            row.createCell(0).setCellValue(stuList.get(i).getId());
+            row.createCell(1).setCellValue(stuList.get(i).getPid());
+            row.createCell(2).setCellValue(stuList.get(i).getDistrict());
             row.createCell(3).setCellValue(stuList.get(i).getLevel());
-            row.createCell(4).setCellValue(stuList.get(i).getCitycode());
-            row.createCell(5).setCellValue(stuList.get(i).getCenter());
-            row.createCell(6).setCellValue(stuList.get(i).getParentid());
 
         }
         //设置单元格宽度自适应，在此基础上把宽度调至1.5倍
