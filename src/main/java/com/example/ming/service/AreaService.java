@@ -2,7 +2,7 @@ package com.example.ming.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.ming.Mapper.FindAllMapper;
+import com.example.ming.mapper.FindAllMapper;
 import com.example.ming.entity.Area;
 import com.example.ming.repository.AreaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
