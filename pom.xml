@@ -168,14 +168,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.icepdf</groupId>
-            <artifactId>icepdf-core</artifactId>
-            <version>1.0.1</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/lib/icepdf-core.jar</systemPath>
-        </dependency>
-
-        <dependency>
             <groupId>com.lowagie</groupId>
             <artifactId>itext</artifactId>
             <version>2.1.7</version>
@@ -200,6 +192,31 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>icepdf</groupId>
+            <artifactId>icepdf-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>icepdf</groupId>
+            <artifactId>icepdf-extra</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>icepdf</groupId>
+            <artifactId>icepdf-pro</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>icepdf</groupId>
+            <artifactId>icepdf-pro-intl</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>icepdf</groupId>
+            <artifactId>icepdf-viewer</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.17</version>
@@ -222,7 +239,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-           <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <executions>
