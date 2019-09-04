@@ -15,15 +15,15 @@ public class Area {
   private static final long serialVersionUID = 1L;
 
   @Id
-  private long areaid;
+  private long id;
 
-  private String areacode;
+  private String pid;
 
   private String areaname;
 
   private long level;
 
-  private String citycode;
+  private String District;
 
   private String center;
 
