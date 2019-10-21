@@ -1,0 +1,25 @@
+logging:
+  level:
+    com:
+      white:
+        list: info
+    org:
+      hibernate: error
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: wf_nfengk
+    password: 1234
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      max-lifetime: 1765000
+      maximum-pool-size: 15
+  jpa:
+      showSql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.Oracle10gDialect
+
+
+

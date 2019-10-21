@@ -92,17 +92,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>fontbox</artifactId>
-            <version>2.0.4</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.55</version>
-        </dependency>
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-core</artifactId>
             <version>2.7.0</version>
@@ -190,31 +179,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>icepdf</groupId>
-            <artifactId>icepdf-core</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>icepdf</groupId>
-            <artifactId>icepdf-extra</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>icepdf</groupId>
-            <artifactId>icepdf-pro</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>icepdf</groupId>
-            <artifactId>icepdf-pro-intl</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>icepdf</groupId>
-            <artifactId>icepdf-viewer</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>

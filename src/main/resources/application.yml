@@ -4,7 +4,7 @@
 #prod   生产环境
 spring:
   profiles:
-    active: aliyunmysql
+    active: mytest
 
 server:
   compression:

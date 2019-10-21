@@ -1,7 +1,7 @@
 package com.example.ming.mapper;
 
 
-import com.example.ming.entity.Area;
+import com.example.ming.entity.WhileList;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public interface FindAllMapper {
      * @return list
      */
     @Select("select * from area")
-    List<Area> findall();
+    List<WhileList> findall();
 
 
 }

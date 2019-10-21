@@ -1,10 +1,8 @@
 package com.example.ming.service;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.example.ming.entity.WhileList;
 import com.example.ming.mapper.FindAllMapper;
-import com.example.ming.entity.Area;
-import com.example.ming.repository.AreaRepository;
+import com.example.ming.repository.WhileListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +10,13 @@ import java.util.List;
 
 
 @Service
-public class AreaService {
+public class WhileListService {
 
     @Autowired
     FindAllMapper findAllMapper;
 
     @Autowired
-    AreaRepository areaRepository;
+    WhileListRepository areaRepository;
 
     public List findData(){
         List list=findAllMapper.findall();
@@ -26,7 +24,7 @@ public class AreaService {
     }
 
     public List findData1(){
-        return (List<Area>)areaRepository.findAll();
+        return (List<WhileList>)areaRepository.findAll();
     }
 
 

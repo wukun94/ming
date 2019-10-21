@@ -1,6 +1,6 @@
 package com.example.ming.repository;
 
-import com.example.ming.entity.Area;
+import com.example.ming.entity.WhileList;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * 注意，如果数据库的字段含有数字，则需要在定义的时候，在实体类的字段上加上colum注释
  * 他的值与数据库字段名一致
  */
-public interface AreaRepository extends PagingAndSortingRepository<Area, String> {
+public interface WhileListRepository extends PagingAndSortingRepository<WhileList, String> {
 
 
 }
